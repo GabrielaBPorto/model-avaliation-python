@@ -1,5 +1,5 @@
 import os
-
+import argparse
 import json
 
 size_key = "size"
@@ -57,6 +57,13 @@ def salvar_resultados_finais(resultados_finais, caminho_da_saida):
     with open(caminho_da_saida, 'w') as arquivo_saida:
         json.dump(resultados_finais, arquivo_saida, indent=4)
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Clean and format Yolov4 cell data.")
+    parser.add_argument("--path", help="Path to the folder containing the files to be cleaned", default=".")
+    return parser.parse_args()
+
+args = parse_arguments()
+caminho_dos_arquivos = os.path.abspath(args.path)
 
 tamanhos = [512, 608, 800]
 resultados_finais = {}
@@ -66,7 +73,7 @@ pasta_temporaria = os.path.join(caminho_atual, "temp")
 os.makedirs(pasta_temporaria, exist_ok=True)
 
 for tamanho in tamanhos:
-    caminho_do_arquivo = os.path.join(caminho_atual, str(tamanho) + '_yolov4_5000_dados_celulas.txt')
+    caminho_do_arquivo = os.path.join(caminho_dos_arquivos, str(tamanho) + '_yolov4_5000_dados_celulas.txt')
     linhas = leitura_por_arquivo(caminho_do_arquivo)
     resultado_formatado = formatacao_de_dados(linhas)
     resultados_finais[size_key + "_" + str(tamanho)] = resultado_formatado

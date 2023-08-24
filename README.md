@@ -8,8 +8,6 @@ Este repositório contém três scripts para limpar dados, calcular métricas e 
 
 2. **Script de Cálculo de Métricas (`metrics_calculation.py`):** Este script lê os dados limpos, calcula as métricas como Verdadeiros Positivos (TP), Falsos Positivos (FP), Falsos Negativos (FN), Precisão, Recall e F1-Score, e imprime os resultados de forma amigável.
 
-3. **Script de Análise dos Melhores Resultados (`best_results_analysis.py`):** Este script analisa as métricas para identificar os melhores resultados com base no F1-Score, que é uma medida harmonizada de precisão e recall, e imprime informações detalhadas.
-
 ## Como Usar
 
 ### 1. Limpeza de Dados
@@ -28,14 +26,6 @@ Execute `metrics_calculation.py` para calcular e imprimir as métricas. Certifiq
 python metrics_calculation.py
 ```
 
-### 3. Análise dos Melhores Resultados
-
-Execute `best_results_analysis.py` para encontrar e imprimir os melhores resultados com base nas métricas calculadas.
-
-```bash
-python best_results_analysis.py
-```
-
 ## Utilização dos Scripts
 
 Este projeto consiste em três scripts principais e um script de controle para limpeza de dados, cálculo de métricas e análise dos melhores resultados.
@@ -44,7 +34,6 @@ Este projeto consiste em três scripts principais e um script de controle para l
 
 1. **`data_cleaning.py`**: Responsável pela limpeza e formatação dos dados brutos.
 2. **`metrics_calculation.py`**: Calcula métricas como precisão, revocação e F1-Score.
-3. **`best_results_analysis.py`**: Analisa os melhores resultados com base nas métricas calculadas.
 
 ### Script de Controle:
 
